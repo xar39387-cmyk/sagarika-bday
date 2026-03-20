@@ -220,4 +220,25 @@
         }
     </script>
 </body>
+    <audio id="bdaySong" loop preload="auto">
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    const bdaySong = document.getElementById('bdaySong');
+
+    // Jetebele Sagarika screen re kouthi bi click karibe, music play heba
+    window.onclick = function() {
+        if (bdaySong.paused) {
+            bdaySong.play().catch(error => console.log("Autoplay blocked by browser"));
+        }
+    };
+
+    // Countdown skip kale madhya music start heba
+    function skipToStep2() { 
+        if (bdaySong.paused) bdaySong.play();
+        clearInterval(countdown); 
+        showPage('step2'); 
+    }
+</script>
 </html>
