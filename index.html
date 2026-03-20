@@ -98,33 +98,11 @@
         .cake-display { display: flex; align-items: flex-end; justify-content: center; gap: 10px; font-size: 110px; }
         .slice { animation: sliceOut 1.2s forwards; }
         @keyframes sliceOut { to { transform: translateX(35px) rotate(20deg); } }
-  /* Bada Start Button Design */
-.start-btn { 
-    background: #fff; 
-    color: #E0115F; 
-    border: none; 
-    padding: 25px 50px; 
-    border-radius: 60px; 
-    cursor: pointer; 
-    font-weight: bold; 
-    font-size: 28px; 
-    box-shadow: 0 10px 30px rgba(255,255,255,0.4); 
-    transition: 0.4s; 
-    animation: pulse 2s infinite; 
-    text-transform: uppercase;
-}
 
-@keyframes pulse { 
-    0% { transform: scale(1); } 
-    50% { transform: scale(1.1); } 
-    100% { transform: scale(1); } 
-} 
     </style>
 </head>
 <body>
-<div id="stepStart" class="container hidden">
-    <button class="start-btn" onclick="startEverything()">START CELEBRATION 🎂</button>
-</div>
+
     <div class="bg-animation"></div>
 
     <div id="step1" class="container">
@@ -241,29 +219,7 @@
             grandSparkleBurst(); // Big explosion once
             setTimeout(() => { showPage('step5'); }, 1500);
         }
-   // Countdown sarila pare stepStart page ku patheriba
-const countdown = setInterval(() => {
-    if(sec > 0) {
-        sec--;
-        // tuma timer text update code...
-    } else {
-        clearInterval(countdown);
-        showPage('stepStart'); // Countdown pare Start button asiba
-    }
-}, 1000);
 
-// Start Button click kale kana heba
-function startEverything() {
-    const song = document.getElementById('bdaySong');
-    song.play();           // Music start heba
-    showPage('step2');     // Photo/Wish page ku jiba
-}
-
-// Skip button pain bi same logic
-function skipToStart() {
-    clearInterval(countdown);
-    showPage('stepStart');
-}
     </script>
 </body>
     <audio id="bdaySong" loop preload="auto">
